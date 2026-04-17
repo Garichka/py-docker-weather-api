@@ -22,7 +22,6 @@ def get_weather():
         condition = data['current']['condition']['text']
 
         print(f"Current weather in {city}: {temp}°C, {condition}")
-
     except requests.exceptions.RequestException as e:
         print(f"Error fetching weather: {e}")
         sys.exit(1)
