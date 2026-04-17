@@ -3,7 +3,7 @@ import requests
 import sys
 
 
-def get_weather():
+def get_weather() -> None:
     api_key = os.getenv("API_KEY")
     city = "Paris"
 
@@ -18,8 +18,8 @@ def get_weather():
         response.raise_for_status()
         data = response.json()
 
-        temp = data['current']['temp_c']
-        condition = data['current']['condition']['text']
+        temp = data["current"]["temp_c"]
+        condition = data["current"]["condition"]["text"]
 
         print(f"Current weather in {city}: {temp}°C, {condition}")
     except requests.exceptions.RequestException as e:
